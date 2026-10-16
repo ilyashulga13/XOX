@@ -6,4 +6,7 @@ using namespace std;
 int main()
 {
     drawLineOne();
+    drawLineTwo();
+    drawLineTree();
+    return 0;
 }
