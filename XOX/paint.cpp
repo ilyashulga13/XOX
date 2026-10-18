@@ -3,75 +3,20 @@
 
 using namespace std;
 
-void draw_row(int sizeY) {
-	for (int i = 0; i < sizeY; i++)
-		cout << "#";
+void drawBoard(char board[], int index) {
+	cout << ' ' << board[index] << ' ' << "|" << ' ' << board[index + 1] << ' ' << "|" << ' ' << board[index + 2] << ' ' << '\n';
 }
 
-void draw_cube(int sizeX, int sizeY) {
-	for (int i = 0; i < sizeX; i++)
-	{
-		for (int j = 0; j < sizeY; j++)
-		{
-			cout << "#";
-		}
-		cout << "\n";
-	}
+void drawFirstLine(char board[]) {
+	drawBoard(board, 0);
+	cout << "---+---+---\n";
 }
 
-void draw_partition(int sizeX, int sizeY) {
-	for (int i = 0; i < sizeX; i++)
-	{
-		cout << "\n";
-	}
+void drawSecondLine(char board[]) {
+	drawBoard(board, 3);
+	cout << "---+---+---\n";
 }
 
-void drawLineOne(int sizeX, int sizeY) {
-	for (int i = 0; i < sizeX; i++)
-	{
-		draw_row(sizeY);
-		cout << "|";
-
-		draw_row(sizeY);
-		cout << "|";
-		
-		draw_row(sizeY);
-		cout << "\n";
-	}
-	for (int j = 0; j < sizeX * 6.25; j++) {
-		cout << "-";
-	}
-}
-
-void drawLineTwo(int sizeX, int sizeY) {
-	cout << "\n";
-	for (int i = 0; i < sizeX; i++)
-	{
-		draw_row(sizeY);
-		cout << "|";
-
-		draw_row(sizeY);
-		cout << "|";
-
-		draw_row(sizeY);
-		cout << "\n";
-	}
-	for (int j = 0; j < sizeX * 6.25; j++) {
-		cout << "-";
-	}
-}
-
-void drawLineTree(int sizeX, int sizeY) {
-	cout << "\n";
-	for (int i = 0; i < sizeX; i++)
-	{
-		draw_row(sizeY);
-		cout << "|";
-
-		draw_row(sizeY);
-		cout << "|";
-
-		draw_row(sizeY);
-		cout << "\n";
-	}
+void drawThirdLine(char board[]) {
+	drawBoard(board, 6);
 }
